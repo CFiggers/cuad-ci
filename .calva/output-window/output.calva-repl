@@ -1,0 +1,1994 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Aborting connect, error determining connect sequence.
+; Evaluating file: core.clj
+#'cuad-ci.core/-main
+clj꞉cuad-ci.core꞉> 
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (core.clj:138)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.IllegalArgumentException: No matching clause: 
+ at cuad_ci.core$progress.invokeStatic (core.clj:138)
+    cuad_ci.core$progress.invoke (core.clj:136)
+    cuad_ci.core_test$runbuild.invokeStatic (core_test.clj:27)
+    cuad_ci.core_test$runbuild.invoke (core_test.clj:26)
+    cuad_ci.core_test$fn__8651.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:36)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$eval8660.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test$eval8660.invoke (form-init14151315199249286056.clj:44)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    cloju
+re.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eva
+l.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error compiling at (test/cuad_ci/core_test.clj:41:18).
+; Unable to resolve symbol: res in this context
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error compiling at (test/cuad_ci/core_test.clj:40:19).
+; Unable to resolve symbol: docker in this context
+clj꞉cuad-ci.core-test꞉> 
+nil
+clj꞉cuad-ci.core-test꞉> 
+:core/build-state
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error compiling at (test/cuad_ci/core_test.clj:40:19).
+; Unable to resolve symbol: docker in this context
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error compiling at (test/cuad_ci/core_test.clj:1:7922).
+; Can't take value of a macro: #'clojure.core/let
+clj꞉cuad-ci.core-test꞉> 
+#object[cuad_ci.docker.service 0x7d4564b5 "cuad_ci.docker.service@7d4564b5"]
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (core.clj:138)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.IllegalArgumentException: No matching clause: 
+ at cuad_ci.core$progress.invokeStatic (core.clj:138)
+    cuad_ci.core$progress.invoke (core.clj:136)
+    cuad_ci.core_test$runbuild.invokeStatic (core_test.clj:27)
+    cuad_ci.core_test$runbuild.invoke (core_test.clj:26)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.
+clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8695.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test$eval8695.invoke (form-init14151315199249286056.clj:44)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval
+$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (core.clj:138)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.IllegalArgumentException: No matching clause: 
+ at cuad_ci.core$progress.invokeStatic (core.clj:138)
+    cuad_ci.core$progress.invoke (core.clj:136)
+    cuad_ci.core_test$runbuild.invokeStatic (core_test.clj:27)
+    cuad_ci.core_test$runbuild.invoke (core_test.clj:26)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.
+clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8697.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test$eval8697.invoke (form-init14151315199249286056.clj:44)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval
+$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (core.clj:138)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.IllegalArgumentException: No matching clause: 
+ at cuad_ci.core$progress.invokeStatic (core.clj:138)
+    cuad_ci.core$progress.invoke (core.clj:136)
+    cuad_ci.core_test$runbuild.invokeStatic (core_test.clj:27)
+    cuad_ci.core_test$runbuild.invoke (core_test.clj:26)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.
+clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8699.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test$eval8699.invoke (form-init14151315199249286056.clj:44)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval
+$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+#object[cuad_ci.docker.service 0x63393f1b "cuad_ci.docker.service@63393f1b"]
+clj꞉cuad-ci.core-test꞉> 
+; Execution error (IllegalArgumentException) at cuad-ci.core/progress (core.clj:138).
+; No matching clause: 
+clj꞉cuad-ci.core-test꞉> 
+f4747a0c224794206bf6b07a20114f31af6aba0aec9a60cd8bcb58b89ecb776a
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:07:30 GMT"}, :body ""}
+{:core/step-name "Step 1", :core/commands ["echo hello" "echo there"], :docker/image "ubuntu"}
+clj꞉cuad-ci.core꞉> 
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+; Execution error (IllegalArgumentException) at cuad-ci.core/progress (core.clj:138).
+; No matching clause: 
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core/progress
+clj꞉cuad-ci.core꞉> 
+
+ERROR in (a-test) (debug.clj:142)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.NullPointerException: null
+ at cider.nrepl.middleware.debug$abort_BANG_.invokeStatic (debug.clj:142)
+    cider.nrepl.middleware.debug$abort_BANG_.invoke (debug.clj:135)
+    cider.nrepl.middleware.debug$read_debug_command.invokeStatic (debug.clj:390)
+    cider.nrepl.middleware.debug$read_debug_command.invoke (debug.clj:315)
+    cider.nrepl.middleware.debug$break.invokeStatic (debug.clj:520)
+    cider.nrepl.middleware.debug$break.invoke (debug.clj:498)
+    cuad_ci.core$eval8718$progress__8719.invoke (form-init14151315199249286056.clj:138)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:28)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeSta
+tic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8724.invokeStatic (form-init14151315199249286056.clj:46)
+    cuad_ci.core_test$eval8724.invoke (form-init14151315199249286056.clj:46)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interrup
+tible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.i
+nterruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error compiling at (test/cuad_ci/core_test.clj:28:1).
+; No such namespace: s
+clj꞉cuad-ci.core-test꞉> 
+nil
+clj꞉cuad-ci.core-test꞉> 
+:clojure.spec.alpha/invalid
+clj꞉cuad-ci.core-test꞉> 
+false
+clj꞉cuad-ci.core-test꞉> 
+#:core{:step-name "First step", :image "ubuntu", :commands ["date"]}
+clj꞉cuad-ci.core-test꞉> 
+false
+clj꞉cuad-ci.core-test꞉> 
+#:core{:step-name "First step", :image "ubuntu", :commands ["date"]}
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/make-step
+clj꞉cuad-ci.core-test꞉> 
+true
+clj꞉cuad-ci.core-test꞉> 
+false
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/test-pipeline
+clj꞉cuad-ci.core-test꞉> 
+true
+clj꞉cuad-ci.core-test꞉> 
+:clojure.spec.alpha/invalid
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/test-build
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]}
+        {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}],
+       :build-state [:buildready :buildready],
+       :completed-steps {}}
+clj꞉cuad-ci.core-test꞉> 
+QUIT
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core/progress
+clj꞉cuad-ci.core꞉> 
+3373773b68351795c052fd6a5caccb701132c5a9d80b284995e75fb97d9d4ad8
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:25 GMT"}, :body ""}
+0e2dfb10a557e46a240d308be6ad709263572660df1b8c5910e71cccb271ff85
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:27 GMT"}, :body ""}
+6dd333b25129ab6a1b71d1acf13d79627387ba857f286874f65cff1c53a8dbcd
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:29 GMT"}, :body ""}
+36e31d0ff8f863efc9ddbb178005c1c20b97e023670d6ff08cd1036c993cae5e
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:32 GMT"}, :body ""}
+c09b4ee8d527d2df6b17f2bfa5058775ba11d5c5921d4f4a78e857652b13992e
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:34 GMT"}, :body ""}
+4b9ddd591922bfe981155e8f0a4725afc541972504f35524b03a73174a5092d5
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:36 GMT"}, :body ""}
+9bff8eac8a2c5357f5c5ba1e6d28835c69078f40987bfa746745b54663f5da0b
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:15:39 GMT"}, :body ""}
+clj꞉cuad-ci.core꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:33)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:28)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test
+$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8770.invokeStatic (form-init14151315199249286056.clj:47)
+    cuad_ci.core_test$eval8770.invoke (form-init14151315199249286056.clj:47)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke
+ (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core/buildrunning
+clj꞉cuad-ci.core꞉> 
+73e4231778b75382211b7fd7f91d40b01bb9e37befa0d53af7456190557a0bff
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:14 GMT"}, :body ""}
+8c0090a7242277db85382f9ab28fa17b890ee82d1212a2ea86cb5f7210775687
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:16 GMT"}, :body ""}
+c23641d69a8058a3ebeeaff65ded814045b75bffd8b5839da93bc340bc97caa8
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:18 GMT"}, :body ""}
+d1a91c789f3bb3b9c7c0e9dadc13f684a5a7cf84dd9cc1c2dbb3ac1900f4fae3
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:21 GMT"}, :body ""}
+3e511775dae4eee6242a5310585524546e3f85004b2bb392092786e4a9e15bed
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:23 GMT"}, :body ""}
+clj꞉cuad-ci.core꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:33)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:28)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test
+$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8777.invokeStatic (form-init14151315199249286056.clj:47)
+    cuad_ci.core_test$eval8777.invoke (form-init14151315199249286056.clj:47)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke
+ (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+; Evaluating file: core.clj
+#'cuad-ci.core/-main
+clj꞉cuad-ci.core꞉> 
+; Evaluating file: core.clj
+#'cuad-ci.core/-main
+clj꞉cuad-ci.core꞉> 
+b094d8b446aa1199f943c6a2542ae8a3b0512b60a8cf1417111df89a31ab05a3
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:48 GMT"}, :body ""}
+2817a72c948bb7434fca178cef2f277c7c0efbdc4bcb448305e9b44b7215902e
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:50 GMT"}, :body ""}
+dd5f9bdd141bc6f83c8d551626494774b2674fce27c06c397495965beaafa5c0
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:53 GMT"}, :body ""}
+0dea5eb1827acac561bfea4b58242824f7691ac6602bad0234511a926d7bed0b
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:55 GMT"}, :body ""}
+cdfe6c33d451405ce5d404b626c17c4f30ac3b495219a3c89d19195f4f721036
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:21:57 GMT"}, :body ""}
+clj꞉cuad-ci.core꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:33)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:28)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$apply.invoke (core.clj:660)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invokeStatic (debug.clj:526)
+    cider.nrepl.middleware.debug$apply_instrumented_maybe.invoke (debug.clj:522)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679$fn__8680.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8677$fn__8678$fn__8679.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test
+$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8937.invokeStatic (form-init14151315199249286056.clj:47)
+    cuad_ci.core_test$eval8937.invoke (form-init14151315199249286056.clj:47)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke
+ (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (debug.clj:142)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.NullPointerException: null
+ at cider.nrepl.middleware.debug$abort_BANG_.invokeStatic (debug.clj:142)
+    cider.nrepl.middleware.debug$abort_BANG_.invoke (debug.clj:135)
+    cider.nrepl.middleware.debug$read_debug_command.invokeStatic (debug.clj:390)
+    cider.nrepl.middleware.debug$read_debug_command.invoke (debug.clj:315)
+    cider.nrepl.middleware.debug$break.invokeStatic (debug.clj:520)
+    cider.nrepl.middleware.debug$break.invoke (debug.clj:498)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:38)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8941.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8941.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+  
+  clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.
+interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (debug.clj:142)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.NullPointerException: null
+ at cider.nrepl.middleware.debug$abort_BANG_.invokeStatic (debug.clj:142)
+    cider.nrepl.middleware.debug$abort_BANG_.invoke (debug.clj:135)
+    cider.nrepl.middleware.debug$read_debug_command.invokeStatic (debug.clj:390)
+    cider.nrepl.middleware.debug$read_debug_command.invoke (debug.clj:315)
+    cider.nrepl.middleware.debug$break.invokeStatic (debug.clj:520)
+    cider.nrepl.middleware.debug$break.invoke (debug.clj:498)
+    cuad_ci.core_test$eval8677$fn__8678.invoke (form-init14151315199249286056.clj:38)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$eval8677$a_test__8692.invoke (form-init14151315199249286056.clj:37)
+    cuad_ci.core_test$eval8943.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8943.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+  
+  clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.
+interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middleware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+fca823a7bcfa5172766f36df2a258757c78ab6f0566427db14cfc49e2c94c2a7
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:22:47 GMT"}, :body ""}
+c63acf527615d35b91a956df8264042ce302352bacae821d8b0fceccd5ce21d9
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:22:50 GMT"}, :body ""}
+f9b5e32417bff2a53c5248ffff5574f3341eaff4c7e0e365ef17e99e2d3389e8
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:22:52 GMT"}, :body ""}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:34)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8947.invokeStatic (form-init14151315199249286056.clj:43)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:39)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:39)
+    cuad_ci.core_test$eval8956.invokeStatic (form-init14151315199249286056.clj:47)
+    cuad_ci.core_test$eval8956.invoke (form-init14151315199249286056.clj:47)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {}}
+774146d2fb4d0c9f7c48394008673bf2ae4fc4176a5af7b283798fa11070c1bf
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:23:14 GMT"}, :body ""}
+4249f8b850ce20d508508c0aa9a66df207aa8840e14ea8fb34231616a3db2f38
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:23:16 GMT"}, :body ""}
+510f9e77b2729752d9f0e2f2979aec9426ae1816f6f784b11217ba0eaed7c0d1
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:23:18 GMT"}, :body ""}
+256e5c76ec28fad9a39491fecc15f0786a3f6bde74bd5d9895f9699c22ce51c1
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:23:21 GMT"}, :body ""}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:35)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8947.invokeStatic (form-init14151315199249286056.clj:43)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:39)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:39)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:39)
+    cuad_ci.core_test$eval8960.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8960.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {}}
+7a1d48ad07d52baf971880a0e8dfe550dbf30d792521f47faaa7a71670e85e06
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:24:16 GMT"}, :body ""}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state {:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]}, :completed-steps {}}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {"Step 1" :step-success}}
+342cb28e3ec22221047b972257901af4260fb8b19035efafbb26a8bb66220949
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:24:18 GMT"}, :body ""}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state {:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]}, :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {"Step 1" :step-success}}
+72b451c1ad99de7298a1c97911e2ef51f812057c4df462513aa32eb390fcdf09
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:24:20 GMT"}, :body ""}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state {:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]}, :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {"Step 1" :step-success}}
+852e79d212bdb3afeb044b940b23934d4d470c7e1539428c6e0cbe09b6fca798
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:24:23 GMT"}, :body ""}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state {:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]}, :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline [{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date"]} {:core/step-name "Second step", :docker/image "ubuntu", :core/commands ["uname -r"]}], :build-state :buildready, :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8964.invokeStatic (form-init14151315199249286056.clj:45)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:41)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8973.invokeStatic (form-init14151315199249286056.clj:49)
+    cuad_ci.core_test$eval8973.invoke (form-init14151315199249286056.clj:49)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+6d209c7d724ac178efeda735db9127ff4fbcd6ceb8be8ae11536b901db11ba6e
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:25:22 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+d05b4b8446469e23b1bffe0949347d240ec81bc47d5e9208284e5adc67a4ee36
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:25:24 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+8a516a9f19bea67e63c2f076ba8184e5ac463955a0f756396eb5b4bc51f970e4
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:25:26 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8964.invokeStatic (form-init14151315199249286056.clj:45)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:41)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8977.invokeStatic (form-init14151315199249286056.clj:49)
+    cuad_ci.core_test$eval8977.invoke (form-init14151315199249286056.clj:49)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/test-pipeline
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+3efcd6cbdea45186cd4f481c0bfb72e920a4a2d6b4e8cfdbf34ce7320be4c95d
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:00 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+5b3848e9c5133a0149bedb34bcfe6a0645bd962360953a9263563cec1b574be6
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:03 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+c00ae4d9be8a576cb917fe085091d2e2d19e6ef601bdf74e683152507616dfd5
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:05 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+de3f1727579854e9114dad4460a6841c301b44ad22997b5c839075c20a57e456
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:07 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+c3863076b82298eaadcc63414d961ab7935ae98a7bb12a89e8339e7a592b3757
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:10 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+c3fbc05591ebe4b2990e3b333f608786cf4dab294bf53747769055ca37844b0a
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:12 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8964.invokeStatic (form-init14151315199249286056.clj:45)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:41)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:41)
+    cuad_ci.core_test$eval8979.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8979.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+e2a468f03816548346c88f6735163e708fac823ac23b65044cdf37eb5132bb19
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:42 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+5b3c3c93c76c3a8b6aeec56b2055e79c19867891862c44b6aa999b391ec4570a
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:44 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8981.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:40)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8990.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8990.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/test-build
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+917bda52ef2e1e0d3d44788395d7a9107c9335538f68e9357811d945d453b97f
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:51 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+4613ac85409843128dd1970eeee95ffb64294d8b86d682686ba257875535378a
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:54 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+5d543c5948eecf168d2c7393bfef716de26feec2ff6b66e5a111b38326ff3df9
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:56 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+522d47bee256c36c7311c51c5071f02e5828cb47b0d1d5818c51be49c937f27f
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:27:58 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__8981.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:40)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval8992.invokeStatic (form-init14151315199249286056.clj:48)
+    cuad_ci.core_test$eval8992.invoke (form-init14151315199249286056.clj:48)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+; Evaluating file: core_test.clj
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+235ecc2c4bdc38dcc04e5582c52601f5c431004e3eb87bee06dee9cfb28bb1c3
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:28:13 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+808314488d34580f578df23433cd40e95d8bffd1219b8a3d6e362e60ac04fb4a
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:28:15 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+ae39b9e8c70aaa138d412518dd9c4adde192ef90ccb6a76a43107192a24180f5
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:28:18 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"Step 1" :step-success}}
+586cd750946220198924b4321a9859c0ac7f94de75c118ebd675ee0d307d2d66
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:28:20 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {"Step 1" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation of file core_test.clj failed: Evaluation was interrupted
+
+clj꞉cuad-ci.core-test꞉> 
+clj꞉cuad-ci.core-test꞉> 
+; Syntax error (InterruptedException) compiling at (test/cuad_ci/core_test.clj:23:1).
+; sleep interrupted
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core/buildrunning
+clj꞉cuad-ci.core꞉> 
+nil
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+974758eed6b8152c4c4b39f4dacf7dcb06a5f7e79fc031a8e013bfb5815913ed
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:28:33 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildsucceeded,
+       :completed-steps {"First step" :step-success}}
+
+FAIL in (a-test) (form-init14151315199249286056.clj:45)
+Cuad CI should run a build (success)
+expected: (= (res :core/build-state) :buildsuccess)
+  actual: (not (= :buildsucceeded :buildsuccess))
+nil
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/a-test
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+03da8cb6a0565cac27a6d896f39ea04b7fe996e11873720741987d4bbddab4fb
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:29:16 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}],
+       :build-state :buildsucceeded,
+       :completed-steps {"First step" :step-success}}
+nil
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/test-pipeline
+clj꞉cuad-ci.core-test꞉> 
+#'cuad-ci.core-test/test-build
+clj꞉cuad-ci.core-test꞉> 
+89d72e209c955ed85a899998721676a8d34bd7e54f9edccff568be19544d4ac7
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:14 GMT"}, :body ""}
+2bc8b8dec345a22ca52f9ef4ab38f8472e12fdd23eccf69a50f92a9dd6e82371
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:16 GMT"}, :body ""}
+cc4c16802b90ed1c86c89bc68a51fecfff78ba9e8f9b64b4a326c4fe179a1dae
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:18 GMT"}, :body ""}
+78f51a04f4a2f41d0ff594115b9e8aacbd61e881b4f691b62e7b015be286f237
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:21 GMT"}, :body ""}
+d0b64298709a33c80d73f1447b60d686b18ebea6bdf312de23d8bd566a67f40c
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:23 GMT"}, :body ""}
+476a992e98fd7a2d450afb048b2b64279e6d053de633c48d868f658bb519bef1
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:25 GMT"}, :body ""}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:35)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:28)
+    cuad_ci.core_test$fn__9033.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:40)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval9046.invokeStatic (form-init14151315199249286056.clj:49)
+    cuad_ci.core_test$eval9046.invoke (form-init14151315199249286056.clj:49)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+#'cuad-ci.core-test/runbuild
+clj꞉cuad-ci.core-test꞉> 
+nil
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+2db3162716bcbbf541b0db83518a08aabeecc433cab9963143d424a03d40f06b
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:45 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+2b50aaf51bdf0d52b61066cd2c9fd0e30bd9ecce8311c2750b67cf2692f58299
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:47 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+f45f1f793526fca0132210dda2af5ae214116642c9a1e99da2ca27abf86a6a7b
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:50 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+9545d85c802cc39b21cccada06fc4af39e013d5aa68dae9aa95ba878c6328d17
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:52 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+2d9dd9cba1274051a95d50498514b193da5c00e3dab80a670ea1b8e7c5a88fc5
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:33:55 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__9033.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:40)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval9060.invokeStatic (form-init14151315199249286056.clj:49)
+    cuad_ci.core_test$eval9060.invoke (form-init14151315199249286056.clj:49)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+nil
+clj꞉cuad-ci.core-test꞉> 
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+648349b246b001980c402cffdc950460cdc50eea373ad48584a595f39d621fa4
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:37:39 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+2eb861edf949efbd1d28597881a0b0a3a9159bb6eccfc82d89d8360850d37f99
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:37:42 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+9dfecf9455fa95cf70c0b11bb55dd0bd4369544a2256aabb9dc67f08eaa8ac40
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:37:44 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+0a9fc55fcbc9e0979349d86b4f04080842337362efaa3fc65eb01e6c8774a2f8
+{:status 204, :headers {"api-version" "1.41", "docker-experimental" "false", "ostype" "linux", "server" "Docker/20.10.7 (linux)", "date" "Mon, 26 Jul 2021 16:37:46 GMT"}, :body ""}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+clj꞉cuad-ci.core-test꞉> 
+; Evaluation was interrupted
+clj꞉cuad-ci.core-test꞉> 
+
+ERROR in (a-test) (Thread.java:-2)
+Uncaught exception, not in assertion.
+expected: nil
+  actual: java.lang.InterruptedException: sleep interrupted
+ at java.lang.Thread.sleep (Thread.java:-2)
+    cuad_ci.core_test$runbuild.invokeStatic (form-init14151315199249286056.clj:36)
+    cuad_ci.core_test$runbuild.invoke (form-init14151315199249286056.clj:29)
+    cuad_ci.core_test$fn__9033.invokeStatic (form-init14151315199249286056.clj:44)
+    cuad_ci.core_test/fn (form-init14151315199249286056.clj:40)
+    clojure.test$test_var$fn__9737.invoke (test.clj:717)
+    clojure.test$test_var.invokeStatic (test.clj:717)
+    clojure.test$test_var.invoke (test.clj:708)
+    cuad_ci.core_test$a_test.invokeStatic (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$a_test.invoke (form-init14151315199249286056.clj:40)
+    cuad_ci.core_test$eval9072.invokeStatic (form-init14151315199249286056.clj:49)
+    cuad_ci.core_test$eval9072.invoke (form-init14151315199249286056.clj:49)
+    clojure.lang.Compiler.eval (Compiler.java:7177)
+    clojure.lang.Compiler.eval (Compiler.java:7132)
+    clojure.core$eval.invokeStatic
+ (core.clj:3214)
+    clojure.core$eval.invoke (core.clj:3210)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809$fn__1810.invoke (interruptible_eval.clj:87)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$with_bindings_STAR_.invokeStatic (core.clj:1973)
+    clojure.core$with_bindings_STAR_.doInvoke (core.clj:1973)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    nrepl.middleware.interruptible_eval$evaluate$fn__1809.invoke (interruptible_eval.clj:87)
+    clojure.main$repl$read_eval_print__9086$fn__9089.invoke (main.clj:437)
+    clojure.main$repl$read_eval_print__9086.invoke (main.clj:437)
+    clojure.main$repl$fn__9095.invoke (main.clj:458)
+    clojure.main$repl.invokeStatic (main.clj:458)
+    clojure.main$repl.doInvoke (main.clj:368)
+    clojure.lang.RestFn.invoke (RestFn.java:1523)
+    nrepl.middleware.interruptible_eval$evaluate.invokeStatic (interruptible_eval.clj:84)
+    nrepl.middl
+eware.interruptible_eval$evaluate.invoke (interruptible_eval.clj:56)
+    nrepl.middleware.interruptible_eval$interruptible_eval$fn__1840$fn__1844.invoke (interruptible_eval.clj:152)
+    clojure.lang.AFn.run (AFn.java:22)
+    nrepl.middleware.session$session_exec$main_loop__1907$fn__1911.invoke (session.clj:202)
+    nrepl.middleware.session$session_exec$main_loop__1907.invoke (session.clj:201)
+    clojure.lang.AFn.run (AFn.java:22)
+    java.lang.Thread.run (Thread.java:829)
+; Evaluating file: core.clj
+#'cuad-ci.core/-main
+clj꞉cuad-ci.core꞉> 
+nil
+clj꞉cuad-ci.core-test꞉> 
+; Evaluating file: core_test.clj
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {}}
+e4c96eba6e43b1f8f083f8e8eb94fe0a0831d99fc60f249df648cc8b5cedaef5
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "First step",
+        :docker/image "ubuntu",
+        :core/commands ["date"]},
+       :completed-steps {}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps {"First step" :step-success}}
+e7326f3fdb69b558d664cfe472760d97d9731910f045e9b7834475dc30edfb5c
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state
+       {:core/step-name "Second step",
+        :docker/image "ubuntu",
+        :core/commands ["uname -r"]},
+       :completed-steps {"First step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildready,
+       :completed-steps
+       {"First step" :step-success, "Second step" :step-success}}
+#:core{:pipeline
+       [{:core/step-name "First step",
+         :docker/image "ubuntu",
+         :core/commands ["date"]}
+        {:core/step-name "Second step",
+         :docker/image "ubuntu",
+         :core/commands ["uname -r"]}],
+       :build-state :buildsucceeded,
+       :completed-steps
+       {"First step" :step-success, "Second step" :step-success}}
+nil
+clj꞉cuad-ci.core-test꞉> 
