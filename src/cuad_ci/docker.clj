@@ -49,10 +49,3 @@
 
 (defn container-status [build]
   [:container-exited 0])
-
-;;(progress (create-service) test-build)
-
-;; (let [service (create-service)
-;;       cid ((.create_container service) {:image "ubuntu" :cmd "echo test"})
-;;       res ((.start_container service) cid)]
-;;   res)
