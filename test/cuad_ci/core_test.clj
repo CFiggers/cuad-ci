@@ -3,7 +3,7 @@
             [cuad-ci.core :as core]
             [cuad-ci.docker :as docker]
             [cuad-ci.runner :as runner]
-            [clojure.spec.alpha :as s]
+            ;; [clojure.spec.alpha :as s]
             [clojure.java.shell :as shell]))
 
 (defmacro make-step [name image commands]

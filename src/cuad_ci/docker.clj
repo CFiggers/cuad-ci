@@ -2,8 +2,8 @@
   (:require [clojure.spec.alpha :as s]
             [clojure.data.json :as json]
             [unixsocket-http.core :as uhttp]
-            [clojure.pprint :as pprint]))
-
+            ;; [clojure.pprint :as pprint]
+            ))
 
 (s/def :docker/container-exit-code (s/or :step-success zero?
                                          :step-failed int?)) ;; Corresponds to Docker/ContainerExitCode
@@ -13,13 +13,6 @@
 (s/def :docker/container-status (s/or :is-running #{:container-running}
                                       :is-other string?
                                       :is-exited :docker/container-exit-code))
-
-(defn parsestatus [status]
-  (let [status (s/conform :docker/container-status :container-running)]
-    (case (first status)
-      :is-running "running"
-      :is-exited "exited"
-      :is-other "other")))
 
 (deftype image [name tag]) ;; Corresponds to Docker/Image
 
