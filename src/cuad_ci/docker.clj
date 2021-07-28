@@ -1,7 +1,8 @@
 (ns cuad-ci.docker
   (:require [clojure.spec.alpha :as s]
             [clojure.data.json :as json]
-            [unixsocket-http.core :as uhttp]))
+            [unixsocket-http.core :as uhttp]
+            [clojure.pprint :as pprint]))
 
 ;; Corresponds to Docker/ContainerExitCode
 (s/def :docker/container-exit-code (s/or :step-succeeded zero?
@@ -27,7 +28,7 @@
                            {:headers {"content-type" "application/json"}
                             :body body})
         cid ((json/read-str (return :body)) "Id")]
-    (clojure.pprint/pprint cid)
+    ;; (pprint/pprint cid)
     cid))
 
 ;; (create-container_ {:image "ubuntu" :cmd "echo hello"})
