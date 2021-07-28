@@ -4,11 +4,11 @@
             [unixsocket-http.core :as uhttp]
             [clojure.pprint :as pprint]))
 
-;; Corresponds to Docker/ContainerExitCode
+
 (s/def :docker/container-exit-code (s/or :step-success zero?
-                                         :step-failed int?))
-;; Corresponds to Docker/ContainerId
-(s/def :docker/container-id string?)
+                                         :step-failed int?)) ;; Corresponds to Docker/ContainerExitCode
+
+(s/def :docker/container-id string?) ;; Corresponds to Docker/ContainerId
 
 (s/def :docker/container-status (s/or :is-running #{:container-running}
                                       :is-other string?
@@ -21,13 +21,11 @@
       :is-exited "exited"
       :is-other "other")))
 
-;; Corresponds to Docker/Image
-(deftype image [name tag])
+(deftype image [name tag]) ;; Corresponds to Docker/Image
 
-;; Corresponds to Docker/Service
-(deftype service [create-container
+(deftype service [create-container 
                   start-container
-                  container-status])
+                  container-status]) ;; Corresponds to Docker/Service
 
 (defn create-container_ [request {:keys [image cmd]}]
   (let [target "/containers/create"
@@ -44,18 +42,11 @@
     ;; (pprint/pprint cid)
     cid))
 
-;; (create-container_ {:image "ubuntu" :cmd "echo hello"})
-;; ;; => Succeeds
-
 (defn start-container_ [request cid]
   (let [target (str "/containers/" cid "/start")
         return (request target)]
     return))
 
-;; (start-container_ (create-container_ {:image "ubuntu" :cmd "echo hello"}))
-;; ;; => Succeeds
-
-;; TODO -- implement this. Should return Status and Code
 (defn container-status_ [request cid]
   (let [target (str "/containers/" cid "/json")
         req (request target)
@@ -67,7 +58,6 @@
       "exited" [:container-exited (:ExitCode state)]
       [:container-other status])))
 
-;; TODO -- does create-interface make more sense here?
 (defn create-service []
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
         api-ver "/v1.40"

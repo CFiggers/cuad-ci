@@ -3,87 +3,32 @@
   (:require [clojure.spec.alpha :as s]
             [cuad-ci.docker :as docker]))
 
-;; Corresponds to Core/StepName
-(s/def :core/step-name string?)
-;; Corresponds to Core/Commands
-(s/def :core/commands (s/coll-of string?))
 
-;; Corresponds to Core/Step
+(s/def :core/step-name string?) ;; Corresponds to Core/StepName
+
+(s/def :core/commands (s/coll-of string?)) ;; Corresponds to Core/Commands
+
 (s/def :core/step (s/keys :req [:core/step-name :core/commands
-                                :docker/image]))
+                                :docker/image])) ;; Corresponds to Core/Step
 
-;; Corresponds to Core/Pipeline
 (s/def :core/pipeline (s/and not-empty
-                             (s/coll-of #(s/valid? :core/step %))))
+                             (s/coll-of #(s/valid? :core/step %)))) ;; Corresponds to Core/Pipeline
 
 (s/def :core/step-result (s/or :step-succeeded #{:step-success}
                                :step-failed :docker/container-exit-code))
 
-;; Corresponds to Core/BuildResult
 (s/def :core/build-result #{:buildsucceeded 
                             :buildfailed 
-                            :buildunexpected})
+                            :buildunexpected}) ;; Corresponds to Core/BuildResult
 
-;; Corresponds to Core/BuildState
 (s/def :core/build-state (s/or :buildready #{:buildready}
                                :buildrunning (s/map-of :core/step :docker/container-id)
-                               :result :core/build-result))
+                               :result :core/build-result)) ;; Corresponds to Core/BuildState
 
 (s/def :core/completed-steps (s/map-of :core/step-name :core/step-result))
 
-;; Corresponds to Core/Build
 (s/def :core/build (s/keys :req [:core/pipeline :core/build-state
-                                 :core/completed-steps]))
-
-(def test-build
-  {:core/pipeline [{:core/step-name "Step 1"
-                    :core/commands ["echo hello" "echo there"]
-                    :docker/image "ubuntu"}
-                   {:core/step-name "Step 2"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}]
-   :core/build-state :buildready
-   :core/completed-steps {}})
-
-(def test-build-c
-  (s/conform :core/build test-build))
-
-(def test-build-running
-  {:core/pipeline [{:core/step-name "Step 1"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}
-                   {:core/step-name "Step 2"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}]
-   :core/build-state {{:core/step-name "Step 1"
-                       :core/commands ["this" "that"]
-                       :docker/image "ubuntu"}
-                      "test container id"}
-   :core/completed-steps {"Step 1" :step-success}})
-
-(def test-build-somecomplete
-  {:core/pipeline [{:core/step-name "Step 1"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}
-                   {:core/step-name "Step 2"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}]
-   :core/build-state {{:core/step-name "Step 2"
-                       :core/commands ["this" "that"]
-                       :docker/image "ubuntu"}
-                      "test container id"}
-   :core/completed-steps {"Step 1" :step-success}})
-
-(def test-build-allcomplete
-  {:core/pipeline [{:core/step-name "Step 1"
-                    :core/commands ["echo hello" "echo there"]
-                    :docker/image "ubuntu"}
-                   {:core/step-name "Step 2"
-                    :core/commands ["this" "that"]
-                    :docker/image "ubuntu"}]
-   :core/build-state :buildsucceeded
-   :core/completed-steps {"Step 1" :step-success
-                          "Step 2" :step-success}})
+                                 :core/completed-steps])) ;; Corresponds to Core/Build
 
 (defn all-steps-run [build]
   (every?
@@ -135,7 +80,6 @@
       :container-exited (container-exited build code)
       :container-other)))
 
-;; docker/service -> core/build -> result
 (defn progress [service build]
   (let [conf-build (s/conform :core/build build)
         state (:core/build-state conf-build)]
@@ -150,13 +94,3 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!"))
-
-
-;; (defn test-case [a]
-;;   (case a
-;;    :this "it's this"
-;;    :that "it's that"
-;;    (let [{:keys [key]} a]
-;;      (str "it's " key))))
-
-;; (test-case {:key "the other thing"})

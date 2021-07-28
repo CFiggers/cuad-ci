@@ -11,28 +11,12 @@
    :docker/image image
    :core/commands commands})
 
-;; (s/valid? :core/pipeline test-pipeline)
-;; ;; => true
-
-;; (s/valid? :core/build test-build)
-;; ;; =? true
-
-;; (runbuild (docker/create-service) test-build)
-
 (def test-pipeline
   [(make-step "First step" "ubuntu" ["date"])
    (make-step "Second step" "ubuntu" ["uname -r"])])
 
 (def bad-pipeline
   [(make-step "Should fail" "ubuntu" ["exit 1"])])
-
-;; (def test-build
-;;   {:core/pipeline test-pipeline
-;;    :core/build-state :buildready
-;;    :core/completed-steps {}})
-
-;; (def test-service
-;;   (docker/create-service))
 
 (defn cleanup-docker []
   (shell/sh "bash" "-c" "docker rm -f $(docker ps -aq --filter \"label=quad\")"))
