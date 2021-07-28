@@ -25,21 +25,21 @@
 (deftype image [name tag])
 
 ;; Corresponds to Docker/Service
-(deftype service [create-container 
-                  start-container 
+(deftype service [create-container
+                  start-container
                   container-status])
 
-(defn create-container_ [{:keys [image cmd]}]
-  (let [manager (uhttp/client "unix:///var/run/docker.sock")
+(defn create-container_ [request {:keys [image cmd]}]
+  (let [path "/containers/create"
         body (json/write-str
               {"Image" image
                "Tty" true
                "Labels" {"quad" ""}
                "Cmd" cmd
                "Entrypoint" ["/bin/sh" "-c"]})
-        return (uhttp/post manager "/v1.40/containers/create"
-                           {:headers {"content-type" "application/json"}
-                            :body body})
+        payload {:headers {"content-type" "application/json"}
+                 :body body}
+        return (request path payload)
         cid ((json/read-str (return :body)) "Id")]
     ;; (pprint/pprint cid)
     cid))
@@ -47,10 +47,9 @@
 ;; (create-container_ {:image "ubuntu" :cmd "echo hello"})
 ;; ;; => Succeeds
 
-(defn start-container_ [cid]
-  (let [manager (uhttp/client "unix:///var/run/docker.sock")
-        target (str "/v1.40/containers/" cid "/start")
-        return (uhttp/post manager target)]
+(defn start-container_ [request cid]
+  (let [target (str "/containers/" cid "/start")
+        return (request target)]
     return))
 
 ;; (start-container_ (create-container_ {:image "ubuntu" :cmd "echo hello"}))
@@ -62,7 +61,11 @@
 
 ;; TODO -- does create-interface make more sense here?
 (defn create-service []
-  (->service
-   (partial create-container_)
-   (partial start-container_)
-   (partial container-status_)))
+  (let [manager (uhttp/client "unix:///var/run/docker.sock")
+        api-ver "/v1.40"
+        req-fn (fn ([a] (uhttp/post manager (str api-ver a)))
+                   ([a b] (uhttp/post manager (str api-ver a) b)))]
+    (->service
+     (partial create-container_ req-fn)
+     (partial start-container_ req-fn)
+     (partial container-status_))))
