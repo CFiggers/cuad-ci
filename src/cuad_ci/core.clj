@@ -92,7 +92,7 @@
 
 (defn all-steps-success [build]
   (every?
-   #(= % :step-success)
+   #(= % 0)
    (vals (build :core/completed-steps))))
 
 (defn nextstep [build]
@@ -120,13 +120,12 @@
 (defn container-exited [build code]
   (let [completed-steps (:core/completed-steps build)
         thisstep (first (keys (build :core/build-state)))
-        thisstep-name (thisstep :core/step-name)
-        step-status :step-success] ;; TODO -- calc from code
+        thisstep-name (thisstep :core/step-name)]
     (assoc build
            :core/build-state :buildready
            :core/completed-steps
            (assoc completed-steps
-                  thisstep-name step-status))))
+                  thisstep-name code))))
 
 (defn buildrunning [service build]
   (let [cid (first (vals (:core/build-state build)))

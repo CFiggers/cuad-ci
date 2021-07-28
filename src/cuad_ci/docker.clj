@@ -5,7 +5,7 @@
             [clojure.pprint :as pprint]))
 
 ;; Corresponds to Docker/ContainerExitCode
-(s/def :docker/container-exit-code (s/or :step-succeeded zero?
+(s/def :docker/container-exit-code (s/or :step-success zero?
                                          :step-failed int?))
 ;; Corresponds to Docker/ContainerId
 (s/def :docker/container-id string?)
@@ -30,7 +30,7 @@
                   container-status])
 
 (defn create-container_ [request {:keys [image cmd]}]
-  (let [path "/containers/create"
+  (let [target "/containers/create"
         body (json/write-str
               {"Image" image
                "Tty" true
@@ -39,7 +39,7 @@
                "Entrypoint" ["/bin/sh" "-c"]})
         payload {:headers {"content-type" "application/json"}
                  :body body}
-        return (request path payload)
+        return (request target payload)
         cid ((json/read-str (return :body)) "Id")]
     ;; (pprint/pprint cid)
     cid))
@@ -56,16 +56,26 @@
 ;; ;; => Succeeds
 
 ;; TODO -- implement this. Should return Status and Code
-(defn container-status_ [cid]
-  [:container-exited 0])
+(defn container-status_ [request cid]
+  (let [target (str "/containers/" cid "/json")
+        req (request target)
+        res (json/read-str (:body req) :key-fn keyword)
+        state (:State res)
+        status (:Status state)]
+    (case status
+      "running" [:container-running]
+      "exited" [:container-exited (:ExitCode state)]
+      [:container-other status])))
 
 ;; TODO -- does create-interface make more sense here?
 (defn create-service []
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
         api-ver "/v1.40"
-        req-fn (fn ([a] (uhttp/post manager (str api-ver a)))
-                   ([a b] (uhttp/post manager (str api-ver a) b)))]
+        post-req-fn (fn ([a] (uhttp/post manager (str api-ver a)))
+                   ([a b] (uhttp/post manager (str api-ver a) b)))
+        get-req-fn (fn ([a] (uhttp/get manager (str api-ver a)))
+                   ([a b] (uhttp/get manager (str api-ver a) b)))]
     (->service
-     (partial create-container_ req-fn)
-     (partial start-container_ req-fn)
-     (partial container-status_))))
+     (partial create-container_ post-req-fn)
+     (partial start-container_ post-req-fn)
+     (partial container-status_ get-req-fn))))
