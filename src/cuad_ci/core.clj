@@ -24,7 +24,7 @@
 
 ;; Corresponds to Core/BuildState
 (s/def :core/build-state (s/or :buildready #{:buildready}
-                               :buildrunning :core/step
+                               :buildrunning (s/map-of :core/step :docker/container-id)
                                :result :core/build-result))
 
 (s/def :core/completed-steps (s/map-of :core/step-name :core/step-result))
@@ -53,9 +53,10 @@
                    {:core/step-name "Step 2"
                     :core/commands ["this" "that"]
                     :docker/image "ubuntu"}]
-   :core/build-state {:core/step-name "Step 1"
-                      :core/commands ["this" "that"]
-                      :docker/image "ubuntu"}
+   :core/build-state {{:core/step-name "Step 1"
+                       :core/commands ["this" "that"]
+                       :docker/image "ubuntu"}
+                      "test container id"}
    :core/completed-steps {"Step 1" :step-success}})
 
 (def test-build-somecomplete
@@ -65,11 +66,11 @@
                    {:core/step-name "Step 2"
                     :core/commands ["this" "that"]
                     :docker/image "ubuntu"}]
-   :core/build-state {:core/step-name "Step 2"
-                      :core/commands ["this" "that"]
-                      :docker/image "ubuntu"}
-   :core/completed-steps {"Step 1" :step-success
-                          "Step 2" 4}})
+   :core/build-state {{:core/step-name "Step 2"
+                       :core/commands ["this" "that"]
+                       :docker/image "ubuntu"}
+                      "test container id"}
+   :core/completed-steps {"Step 1" :step-success}})
 
 (def test-build-allcomplete
   {:core/pipeline [{:core/step-name "Step 1"
@@ -110,13 +111,13 @@
           cid ((.create-container service) opts)
           res ((.start-container service) cid)]
       ;; (clojure.pprint/pprint res)
-      (assoc build :core/build-state stepnext))
+      (assoc build :core/build-state {stepnext cid}))
 
     :else (assoc build :core/build-state :buildsucceeded)))
 
 (defn container-exited [build code]
   (let [completed-steps (:core/completed-steps build)
-        thisstep (build :core/build-state)
+        thisstep (first (keys (build :core/build-state)))
         thisstep-name (thisstep :core/step-name)
         step-status :step-success] ;; TODO -- calc from code
     (assoc build
@@ -126,7 +127,8 @@
                   thisstep-name step-status))))
 
 (defn buildrunning [service build]
-  (let [[status code] (docker/container-status build)]
+  (let [cid (first (vals (:core/build-state build)))
+        [status code] ((.container-status service) cid)]
     (case status
       :container-running build
       :container-exited (container-exited build code)
@@ -134,8 +136,9 @@
 
 ;; docker/service -> core/build -> result
 (defn progress [service build]
-  (let [conf-build (s/conform :core/build build)]
-    (case (first (conf-build :core/build-state))
+  (let [conf-build (s/conform :core/build build)
+        state (:core/build-state conf-build)]
+    (case (first state)
       :buildready (buildready service build)
       :buildrunning (buildrunning service build)
       (:buildsucceeded
@@ -145,3 +148,13 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!"))
+
+
+;; (defn test-case [a]
+;;   (case a
+;;    :this "it's this"
+;;    :that "it's that"
+;;    (let [{:keys [key]} a]
+;;      (str "it's " key))))
+
+;; (test-case {:key "the other thing"})
