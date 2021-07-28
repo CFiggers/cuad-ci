@@ -23,6 +23,9 @@
   [(make-step "First step" "ubuntu" ["date"])
    (make-step "Second step" "ubuntu" ["uname -r"])])
 
+(def bad-pipeline
+  [(make-step "Should fail" "ubuntu" ["exit 1"])])
+
 ;; (def test-build
 ;;   {:core/pipeline test-pipeline
 ;;    :core/build-state :buildready
@@ -43,4 +46,8 @@
           (let [build ((.preparebuild runner) test-pipeline)
                 res ((.runbuild runner) build)]
             (test/is (= (res :core/build-state) :buildsucceeded))
-            (test/is (= true (core/all-steps-success res)))))))))
+            (test/is (= true (core/all-steps-success res)))))
+        (test/testing "should run a build (failure)"
+          (let [build ((.preparebuild runner) bad-pipeline)
+                res ((.runbuild runner) build)]
+            (test/is (= (res :core/build-state) :buildfailed))))))))
