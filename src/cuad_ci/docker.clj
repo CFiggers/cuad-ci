@@ -10,11 +10,24 @@
 ;; Corresponds to Docker/ContainerId
 (s/def :docker/container-id string?)
 
+(s/def :docker/container-status (s/or :is-running #{:container-running}
+                                      :is-other string?
+                                      :is-exited :docker/container-exit-code))
+
+(defn parsestatus [status]
+  (let [status (s/conform :docker/container-status :container-running)]
+    (case (first status)
+      :is-running "running"
+      :is-exited "exited"
+      :is-other "other")))
+
 ;; Corresponds to Docker/Image
 (deftype image [name tag])
 
 ;; Corresponds to Docker/Service
-(deftype service [create-container start-container])
+(deftype service [create-container 
+                  start-container 
+                  container-status])
 
 (defn create-container_ [{:keys [image cmd]}]
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
@@ -43,12 +56,13 @@
 ;; (start-container_ (create-container_ {:image "ubuntu" :cmd "echo hello"}))
 ;; ;; => Succeeds
 
+;; TODO -- implement this. Should return Status and Code
+(defn container-status_ [cid]
+  [:container-exited 0])
+
 ;; TODO -- does create-interface make more sense here?
 (defn create-service []
   (->service
    (partial create-container_)
-   (partial start-container_)))
-
-;; TODO -- implement this. Should return Status and Code
-(defn container-status [build]
-  [:container-exited 0])
+   (partial start-container_)
+   (partial container-status_)))
