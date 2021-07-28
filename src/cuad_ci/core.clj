@@ -97,10 +97,6 @@
           #(not ((set (keys (build :core/completed-steps))) (% :core/step-name)))
           (build :core/pipeline))))
 
-(defn runstep [build]
-  ;; TODO -- Finish the rest of this function to actually run stuff
-  ["Step 1" :step-success])
-
 (defn buildready [service build]
   (cond
     (not (all-steps-success build)) ;; Any step failed
@@ -118,21 +114,22 @@
 
     :else (assoc build :core/build-state :buildsucceeded)))
 
-(defn container-exited [build]
+(defn container-exited [build code]
   (let [completed-steps (:core/completed-steps build)
         thisstep (build :core/build-state)
-        thisstep-name (thisstep :core/step-name)]
+        thisstep-name (thisstep :core/step-name)
+        step-status :step-success] ;; TODO -- calc from code
     (assoc build
            :core/build-state :buildready
            :core/completed-steps
            (assoc completed-steps
-                  thisstep-name :step-success))))
+                  thisstep-name step-status))))
 
 (defn buildrunning [service build]
   (let [[status code] (docker/container-status build)]
     (case status
       :container-running build
-      :container-exited (container-exited build)
+      :container-exited (container-exited build code)
       :container-other)))
 
 ;; docker/service -> core/build -> result

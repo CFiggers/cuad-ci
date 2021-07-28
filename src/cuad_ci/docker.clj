@@ -27,7 +27,7 @@
                            {:headers {"content-type" "application/json"}
                             :body body})
         cid ((json/read-str (return :body)) "Id")]
-    ;; (clojure.pprint/pprint cid)
+    (clojure.pprint/pprint cid)
     cid))
 
 ;; (create-container_ {:image "ubuntu" :cmd "echo hello"})
@@ -42,10 +42,12 @@
 ;; (start-container_ (create-container_ {:image "ubuntu" :cmd "echo hello"}))
 ;; ;; => Succeeds
 
+;; TODO -- does create-interface make more sense here?
 (defn create-service []
   (->service
    (partial create-container_)
    (partial start-container_)))
 
+;; TODO -- implement this. Should return Status and Code
 (defn container-status [build]
   [:container-exited 0])
