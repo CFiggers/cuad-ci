@@ -20,7 +20,9 @@
                                :step-failed :docker/container-exit-code))
 
 ;; Corresponds to Core/BuildResult
-(s/def :core/build-result #{:buildsucceeded :buildfailed})
+(s/def :core/build-result #{:buildsucceeded 
+                            :buildfailed 
+                            :buildunexpected})
 
 ;; Corresponds to Core/BuildState
 (s/def :core/build-state (s/or :buildready #{:buildready}
@@ -142,7 +144,8 @@
       :buildready (buildready service build)
       :buildrunning (buildrunning service build)
       (:buildsucceeded
-       :buildfailed) build)))
+       :buildfailed
+       :buildunexpected) build)))
 
 (defn -main
   "I don't do a whole lot ... yet."
