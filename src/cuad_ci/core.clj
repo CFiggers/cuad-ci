@@ -65,9 +65,10 @@
 
     (not (all-steps-run build)) ;; Any steps need run
     (let [stepnext (nextstep build)
-          image (stepnext :docker/image)
-          cmd (stepnext :core/commands)
-          opts {:image image :cmd cmd}
+          image (:docker/image stepnext)
+          cmd (:core/commands stepnext)
+          vol (:docker/volume-name build)
+          opts {:image image :cmd cmd :vol vol}
           cid ((.create-container service) opts)
           res ((.start-container service) cid)]
       ;; (clojure.pprint/pprint res)

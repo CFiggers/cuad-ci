@@ -26,14 +26,16 @@
                   container-status
                   create-volume]) ;; Corresponds to Docker/Service
 
-(defn create-container_ [request {:keys [image cmd]}]
+(defn create-container_ [request {:keys [image cmd vol]}]
   (let [target "/containers/create"
         body (json/write-str
               {"Image" image
                "Tty" true
                "Labels" {"quad" ""}
                "Cmd" (string/join "\n" (cons "set -ex" cmd))
-               "Entrypoint" ["/bin/sh" "-c"]})
+               "Entrypoint" ["/bin/sh" "-c"]
+               "WorkingDir" "/app"
+               "HostConfig" {"Binds" [(str vol ":/app")]}})
         payload {:headers {"content-type" "application/json"}
                  :body body}
         return (request target payload)
