@@ -3,7 +3,6 @@
   (:require [clojure.spec.alpha :as s]
             [cuad-ci.docker :as docker]))
 
-
 (s/def :core/step-name string?) ;; Corresponds to Core/StepName
 
 (s/def :core/commands (s/coll-of string?)) ;; Corresponds to Core/Commands
@@ -17,8 +16,8 @@
 (s/def :core/step-result (s/or :step-succeeded #{:step-success}
                                :step-failed :docker/container-exit-code))
 
-(s/def :core/build-result #{:buildsucceeded 
-                            :buildfailed 
+(s/def :core/build-result #{:buildsucceeded
+                            :buildfailed
                             :buildunexpected}) ;; Corresponds to Core/BuildResult
 
 (s/def :core/build-state (s/or :buildready #{:buildready}
@@ -27,8 +26,10 @@
 
 (s/def :core/completed-steps (s/map-of :core/step-name :core/step-result))
 
-(s/def :core/build (s/keys :req [:core/pipeline :core/build-state
-                                 :core/completed-steps])) ;; Corresponds to Core/Build
+(s/def :core/build (s/keys :req [:core/pipeline 
+                                 :core/build-state
+                                 :core/completed-steps
+                                 :docker/volume-name])) ;; Corresponds to Core/Build
 
 (defn all-steps-run [build]
   (every?

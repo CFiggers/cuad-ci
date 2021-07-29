@@ -15,11 +15,14 @@
                                       :is-other string?
                                       :is-exited :docker/container-exit-code))
 
+(s/def :docker/volume-name string?) ;; Corresponds to Docker/Volume
+
 (deftype image [name tag]) ;; Corresponds to Docker/Image
 
 (deftype service [create-container 
                   start-container
-                  container-status]) ;; Corresponds to Docker/Service
+                  container-status
+                  create-volume]) ;; Corresponds to Docker/Service
 
 (defn create-container_ [request {:keys [image cmd]}]
   (let [target "/containers/create"
@@ -32,7 +35,7 @@
         payload {:headers {"content-type" "application/json"}
                  :body body}
         return (request target payload)
-        cid ((json/read-str (return :body)) "Id")]
+        cid ((json/read-str (:body return) :key-fn keyword) :Id)]
     ;; (pprint/pprint cid)
     cid))
 
@@ -43,14 +46,24 @@
 
 (defn container-status_ [request cid]
   (let [target (str "/containers/" cid "/json")
-        req (request target)
-        res (json/read-str (:body req) :key-fn keyword)
+        return (request target)
+        res (json/read-str (:body return) :key-fn keyword)
         state (:State res)
         status (:Status state)]
     (case status
       "running" [:container-running]
       "exited" [:container-exited (:ExitCode state)]
       [:container-other status])))
+
+(defn create-volume_ [request]
+  (let [target "/volumes/create"
+        body (json/write-str
+              {"Labels" {"quad", ""}})
+        payload {:headers {"content-type" "application/json"}
+                 :body body}
+        return (request target payload)
+        volume-name ((json/read-str (:body return) :key-fn keyword) :Name)]
+    volume-name))
 
 (defn create-service []
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
@@ -62,4 +75,5 @@
     (->service
      (partial create-container_ post-req-fn)
      (partial start-container_ post-req-fn)
-     (partial container-status_ get-req-fn))))
+     (partial container-status_ get-req-fn)
+     (partial create-volume_ post-req-fn))))

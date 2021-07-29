@@ -18,20 +18,29 @@
 (def bad-pipeline
   [(make-step "Should fail" "ubuntu" ["exit 1"])])
 
+(def test-workspace-pipeline
+  [(make-step "First step" "ubuntu" ["echo hello > test"])
+   (make-step "Second step" "ubuntu" ["cat test"])])
+
 (defn cleanup-docker []
   (shell/sh "bash" "-c" "docker rm -f $(docker ps -aq --filter \"label=quad\")"))
 
 (test/deftest a-test
   (do (cleanup-docker)
-    (let [docker (docker/create-service)
-          runner (runner/create-service docker)]
-      (test/testing "Cuad CI"
-        (test/testing "should run a build (success)"
-          (let [build ((.preparebuild runner) test-pipeline)
-                res ((.runbuild runner) build)]
-            (test/is (= (res :core/build-state) :buildsucceeded))
-            (test/is (= true (core/all-steps-success res)))))
-        (test/testing "should run a build (failure)"
-          (let [build ((.preparebuild runner) bad-pipeline)
-                res ((.runbuild runner) build)]
-            (test/is (= (res :core/build-state) :buildfailed))))))))
+      (let [docker (docker/create-service)
+            runner (runner/create-service docker)]
+        (test/testing "Cuad CI"
+          (test/testing "should run a build (success)"
+            (let [build ((.preparebuild runner) test-pipeline)
+                  res ((.runbuild runner) build)]
+              (test/is (= (res :core/build-state) :buildsucceeded))
+              (test/is (= true (core/all-steps-success res)))))
+          (test/testing "should run a build (failure)"
+            (let [build ((.preparebuild runner) bad-pipeline)
+                  res ((.runbuild runner) build)]
+              (test/is (= (res :core/build-state) :buildfailed))))
+          (test/testing "should share workspace between steps"
+            (let [build ((.preparebuild runner) test-workspace-pipeline)
+                  res ((.runbuild runner) build)]
+              (test/is (= (res :core/build-state) :buildsucceeded))
+              (test/is (= true (core/all-steps-success res)))))))))

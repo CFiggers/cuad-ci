@@ -15,9 +15,11 @@
           (recur (core/progress service newBuild))))))
 
 (defn preparebuild_ [service pipeline]
-  {:core/pipeline pipeline
-   :core/build-state :buildready
-   :core/completed-steps {}})
+  (let [volume ((.create-volume service))]
+    {:core/pipeline pipeline
+     :core/build-state :buildready
+     :core/completed-steps {}
+     :docker/volume-name volume}))
 
 (defn create-service [docker]
   (->service
