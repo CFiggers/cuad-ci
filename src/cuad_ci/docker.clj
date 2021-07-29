@@ -13,7 +13,16 @@
 
 (s/def :docker/container-status (s/or :is-running #{:container-running}
                                       :is-other string?
-                                      :is-exited :docker/container-exit-code))
+                                      :is-exited :docker/container-exit-code)) ;; Corresponds to Docker/ContainerId
+
+(s/def :docker/image string?)
+(s/def :docker/cmd string?)
+(s/def :docker/vol string?)
+(s/def :docker/create-container-options (s/keys :req [:docker/image
+                                                      :docker/cmd
+                                                      :docker/vol]))
+
+(s/def :docker/container-id string?)
 
 (s/def :docker/volume-name string?) ;; Corresponds to Docker/Volume
 

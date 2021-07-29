@@ -1,31 +1,28 @@
 (ns cuad-ci.core
   (:gen-class)
   (:require [clojure.spec.alpha :as s]
+            ;; [clojure.spec.test.alpha :as spec-test]
             [cuad-ci.docker :as docker]))
 
 (s/def :core/step-name string?) ;; Corresponds to Core/StepName
-
 (s/def :core/commands (s/coll-of string?)) ;; Corresponds to Core/Commands
-
-(s/def :core/step (s/keys :req [:core/step-name :core/commands
+;; See :docker/image
+(s/def :core/step (s/keys :req [:core/step-name 
+                                :core/commands
                                 :docker/image])) ;; Corresponds to Core/Step
 
 (s/def :core/pipeline (s/and not-empty
                              (s/coll-of #(s/valid? :core/step %)))) ;; Corresponds to Core/Pipeline
-
-(s/def :core/step-result (s/or :step-succeeded #{:step-success}
-                               :step-failed :docker/container-exit-code))
-
 (s/def :core/build-result #{:buildsucceeded
                             :buildfailed
-                            :buildunexpected}) ;; Corresponds to Core/BuildResult
-
+                            :buildunexpected})
 (s/def :core/build-state (s/or :buildready #{:buildready}
                                :buildrunning (s/map-of :core/step :docker/container-id)
-                               :result :core/build-result)) ;; Corresponds to Core/BuildState
-
+                               :result :core/build-result)) ;; Corresponds to Core/BuildResult
+(s/def :core/step-result (s/or :step-succeeded #{:step-success}
+                               :step-failed :docker/container-exit-code)) ;; Corresponds to Core/BuildState
 (s/def :core/completed-steps (s/map-of :core/step-name :core/step-result))
-
+;; See :docker/volume-name
 (s/def :core/build (s/keys :req [:core/pipeline 
                                  :core/build-state
                                  :core/completed-steps
