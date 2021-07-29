@@ -36,15 +36,27 @@
    (set (keys (build :core/completed-steps)))
    (map :core/step-name (build :core/pipeline))))
 
+(s/fdef all-steps-run
+        :args (s/cat :build :core/build)
+        :ret boolean?)
+
 (defn all-steps-success [build]
   (every?
    #(= % 0)
    (vals (build :core/completed-steps))))
 
+(s/fdef all-steps-success
+        :args (s/cat :build :core/build)
+        :ret boolean?)
+
 (defn nextstep [build]
   (first (filter
           #(not ((set (keys (build :core/completed-steps))) (% :core/step-name)))
           (build :core/pipeline))))
+
+(s/fdef nextstep
+        :args (s/cat :build :core/build)
+        :ret :core/step)
 
 (defn buildready [service build]
   (cond
@@ -63,6 +75,11 @@
 
     :else (assoc build :core/build-state :buildsucceeded)))
 
+(s/fdef buildready
+        :args (s/and (s/cat :service :docker/service 
+                            :build :core/build))
+        :ret :core/build)
+
 (defn container-exited [build code]
   (let [completed-steps (:core/completed-steps build)
         thisstep (first (keys (build :core/build-state)))
@@ -73,6 +90,11 @@
            (assoc completed-steps
                   thisstep-name code))))
 
+(s/fdef container-exited
+        :args (s/and (s/cat :build :core/build
+                            :code int?))
+        :ret :core/build)
+
 (defn buildrunning [service build]
   (let [cid (first (vals (:core/build-state build)))
         [status code] ((.container-status service) cid)]
@@ -80,6 +102,11 @@
       :container-running build
       :container-exited (container-exited build code)
       :container-other)))
+
+(s/fdef buildrunning
+        :args (s/and (s/cat :service :docker/service 
+                            :build :core/build))
+        :ret :core/build)
 
 (defn progress [service build]
   (let [conf-build (s/conform :core/build build)
@@ -90,6 +117,11 @@
       (:buildsucceeded
        :buildfailed
        :buildunexpected) build)))
+
+(s/fdef progress
+        :args (s/and (s/cat :service :docker/service 
+                            :build :core/build))
+        :ret :core/build)
 
 (defn -main
   "I don't do a whole lot ... yet."

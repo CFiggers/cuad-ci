@@ -4,6 +4,7 @@
             [cuad-ci.docker :as docker]
             [cuad-ci.runner :as runner]
             ;; [clojure.spec.alpha :as s]
+            ;; [clojure.spec.test.alpha :as spec-test]
             [clojure.java.shell :as shell]))
 
 (defmacro make-step [name image commands]

@@ -19,6 +19,8 @@
 
 (deftype image [name tag]) ;; Corresponds to Docker/Image
 
+(s/def :docker/service #(not (nil? %)))
+
 (deftype service [create-container 
                   start-container
                   container-status
