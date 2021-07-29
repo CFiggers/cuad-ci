@@ -24,7 +24,7 @@
    (make-step "Second step" "ubuntu" ["cat test"])])
 
 (defn cleanup-docker []
-  (shell/sh "bash" "-c" "docker rm -f $(docker ps -aq --filter \"label=quad\")"))
+  (shell/sh "bash" "-c" "docker rm -f $(docker ps -aq --filter \"label=quad\") && docker volume rm -f $(docker volume ls -q --filter \"label=quad\")"))
 
 (test/deftest a-test
   (do (cleanup-docker)

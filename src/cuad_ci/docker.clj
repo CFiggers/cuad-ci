@@ -9,8 +9,6 @@
 (s/def :docker/container-exit-code (s/or :step-success zero?
                                          :step-failed int?)) ;; Corresponds to Docker/ContainerExitCode
 
-(s/def :docker/container-id string?) ;; Corresponds to Docker/ContainerId
-
 (s/def :docker/container-status (s/or :is-running #{:container-running}
                                       :is-other string?
                                       :is-exited :docker/container-exit-code)) ;; Corresponds to Docker/ContainerId
@@ -22,18 +20,25 @@
                                                       :docker/cmd
                                                       :docker/vol]))
 
-(s/def :docker/container-id string?)
+(s/def :docker/container-id string?) ;; Corresponds to Docker/ContainerId
+(s/def :docker/since int?)
+(s/def :docker/until int?)
+(s/def :docker/fetch-logs-options (s/keys :req [:docker/container-id
+                                                :docker/since
+                                                :docker/until]))
 
 (s/def :docker/volume-name string?) ;; Corresponds to Docker/Volume
 
-(deftype image [name tag]) ;; Corresponds to Docker/Image
+(deftype image [name 
+                tag]) ;; Corresponds to Docker/Image
 
 (s/def :docker/service #(not (nil? %)))
 
-(deftype service [create-container 
+(deftype service [create-container
                   start-container
                   container-status
-                  create-volume]) ;; Corresponds to Docker/Service
+                  create-volume
+                  fetch-logs]) ;; Corresponds to Docker/Service
 
 (defn create-container_ [request {:keys [image cmd vol]}]
   (let [target "/containers/create"
@@ -82,11 +87,12 @@
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
         api-ver "/v1.40"
         post-req-fn (fn ([a] (uhttp/post manager (str api-ver a)))
-                   ([a b] (uhttp/post manager (str api-ver a) b)))
+                      ([a b] (uhttp/post manager (str api-ver a) b)))
         get-req-fn (fn ([a] (uhttp/get manager (str api-ver a)))
-                   ([a b] (uhttp/get manager (str api-ver a) b)))]
+                     ([a b] (uhttp/get manager (str api-ver a) b)))]
     (->service
      (partial create-container_ post-req-fn)
      (partial start-container_ post-req-fn)
      (partial container-status_ get-req-fn)
-     (partial create-volume_ post-req-fn))))
+     (partial create-volume_ post-req-fn)
+     (partial fetch-logs_ #())))) ;; TODO -- implement this
