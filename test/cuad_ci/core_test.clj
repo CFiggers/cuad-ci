@@ -12,6 +12,9 @@
    :docker/image image
    :core/commands commands})
 
+(let [service (docker/create-service)]
+  (:core/build-state (core/progress service (runner/preparebuild_ service test-pipeline))))
+
 (def test-pipeline
   [(make-step "First step" "ubuntu" ["date" "echo hello"])
    (make-step "Second step" "ubuntu" ["uname -r" "echo hello"])])
