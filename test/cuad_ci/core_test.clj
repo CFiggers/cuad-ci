@@ -12,8 +12,8 @@
    :core/commands commands})
 
 (def test-pipeline
-  [(make-step "First step" "ubuntu" ["date"])
-   (make-step "Second step" "ubuntu" ["uname -r"])])
+  [(make-step "First step" "ubuntu" ["date" "echo hello"])
+   (make-step "Second step" "ubuntu" ["uname -r" "echo hello"])])
 
 (def bad-pipeline
   [(make-step "Should fail" "ubuntu" ["exit 1"])])

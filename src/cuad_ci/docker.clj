@@ -2,6 +2,7 @@
   (:require [clojure.spec.alpha :as s]
             [clojure.data.json :as json]
             [unixsocket-http.core :as uhttp]
+            [clojure.string :as string]
             ;; [clojure.pprint :as pprint]
             ))
 
@@ -26,7 +27,7 @@
               {"Image" image
                "Tty" true
                "Labels" {"quad" ""}
-               "Cmd" cmd
+               "Cmd" (string/join "\n" (cons "set -ex" cmd))
                "Entrypoint" ["/bin/sh" "-c"]})
         payload {:headers {"content-type" "application/json"}
                  :body body}
