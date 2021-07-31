@@ -13,7 +13,10 @@
                                       :is-other string?
                                       :is-exited :docker/container-exit-code)) ;; Corresponds to Docker/ContainerId
 
-(s/def :docker/image string?)
+(s/def :docker/image-name string?)
+(s/def :docker/image-tag string?)
+(s/def :docker/image (s/keys :req [:docker/image-name]
+                             :opt [:docker/image-tag]))
 (s/def :docker/cmd string?)
 (s/def :docker/vol string?)
 (s/def :docker/create-container-options (s/keys :req [:docker/image
@@ -38,7 +41,8 @@
                   start-container
                   container-status
                   create-volume
-                  fetch-logs]) ;; Corresponds to Docker/Service
+                  fetch-logs
+                  pull-image]) ;; Corresponds to Docker/Service
 
 (defn create-container_ [request {:keys [image cmd vol]}]
   (let [target "/containers/create"
@@ -103,6 +107,22 @@
 ;;               :docker/since 0
 ;;               :docker/until 1627751417382})
 
+(defn pull-image_ [request {image-tag :docker/image-tag 
+                            image-name :docker/image-name}]
+  (let [target "/images/create"
+        url (str target
+                 "?tag="
+                 image-tag
+                 "&fromImage="
+                 image-name)
+        return (request url)
+        response (:body return)]
+    response))
+
+(s/fdef pull-image_ 
+        :args (s/and (s/cat :request :docker/service
+                            :image :docker/image)))
+
 (defn create-service []
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
         api-ver "/v1.40"
@@ -115,4 +135,5 @@
      (partial start-container_ post-req-fn)
      (partial container-status_ get-req-fn)
      (partial create-volume_ post-req-fn)
-     (partial fetch-logs_ get-req-fn))))
+     (partial fetch-logs_ get-req-fn)
+     (partial pull-image_ post-req-fn))))

@@ -21,7 +21,7 @@
 
 (def test-log-coll {"First step" :collectionready, "Second step" {"3c77a261455ec445c960b11927891c33d50c3c6b1dc7ea7c464da32b8c9a6088" 0}})
 
-(def test-state {{:core/step-name "First step", :docker/image "ubuntu", :core/commands ["date" "echo hello"]}
+(def test-state {{:core/step-name "First step", :docker/image {:docker/image-name "ubuntu", :docker/image-tag "latest"}, :core/commands ["date" "echo hello"]}
                  "3c77a261455ec445c960b11927891c33d50c3c6b1dc7ea7c464da32b8c9a6088"})
 
 ;; => [:buildrunning

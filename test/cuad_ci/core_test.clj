@@ -11,7 +11,7 @@
 
 (defmacro make-step [name image commands]
   {:core/step-name name
-   :docker/image image
+   :docker/image {:docker/image-name image :docker/image-tag "latest"}
    :core/commands commands})
 
 (def test-pipeline
@@ -28,6 +28,9 @@
 (def test-log-pipeline
   [(make-step "Long step" "ubuntu" ["echo hello" "sleep 2" "echo world" "sleep 2"])
    (make-step "Echo Linux" "ubuntu" ["uname -s"])])
+
+(def test-pull-pipeline
+  [(make-step "First step" "busybox" ["date"])])
 
 (defn cleanup-docker []
   (shell/sh "bash" "-c" "docker rm -f $(docker ps -aq --filter \"label=quad\") && docker volume rm -f $(docker volume ls -q --filter \"label=quad\")"))
@@ -76,6 +79,12 @@
                   res ((.runbuild runner) test-hooks build)]
               (test/is (= (res :core/build-state) :buildsucceeded))
               (test/is (= true (core/all-steps-success res)))
-              (test/is (= #{} @mem))))))))
+              (test/is (= #{} @mem))))
 
-(a-test)
+          (test/testing "should pull images"
+            (prn "- Cuad CI should pull images")
+            (shell/sh "bash" "-c" "docker rmi -f busybox")
+            (let [build ((.preparebuild runner) test-pull-pipeline)
+                  res ((.runbuild runner) empty-hooks build)]
+              (test/is (= (res :core/build-state) :buildsucceeded))
+              (test/is (= true (core/all-steps-success res)))))))))
