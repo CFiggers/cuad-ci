@@ -83,6 +83,26 @@
         volume-name ((json/read-str (:body return) :key-fn keyword) :Name)]
     volume-name))
 
+(defn fetch-logs_ [request opts]
+  (let [target "/containers/"
+        cid (:docker/container-id opts)
+        since (:docker/since opts)
+        until (:docker/until opts)
+        url (str target
+                 cid
+                 "/logs?stdout=true&stderr=true&since="
+                 since
+                 "&until="
+                 until)
+        return (request url)
+        logs (filter #(not (= \+ (first %))) (clojure.string/split-lines (:body return)))]
+    logs))
+
+;; (fetch-logs_ #(uhttp/get (uhttp/client "unix:///var/run/docker.sock") (str "/v1.40" %)) 
+;;              {:docker/container-id "3c77a261455ec445c960b11927891c33d50c3c6b1dc7ea7c464da32b8c9a6088"
+;;               :docker/since 0
+;;               :docker/until 1627751417382})
+
 (defn create-service []
   (let [manager (uhttp/client "unix:///var/run/docker.sock")
         api-ver "/v1.40"
@@ -95,4 +115,4 @@
      (partial start-container_ post-req-fn)
      (partial container-status_ get-req-fn)
      (partial create-volume_ post-req-fn)
-     (partial fetch-logs_ #())))) ;; TODO -- implement this
+     (partial fetch-logs_ get-req-fn))))
