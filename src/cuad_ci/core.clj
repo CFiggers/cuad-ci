@@ -1,8 +1,11 @@
 (ns cuad-ci.core
   (:gen-class)
   (:require [clojure.spec.alpha :as s]
+            [clojure.string :as string]
             ;; [clojure.spec.test.alpha :as spec-test]
-            [cuad-ci.docker :as docker]))
+            [yaml.core :as yaml]
+            [cuad-ci.docker :as docker]
+            [clojure.set :as set]))
 
 (s/def :core/step-name string?) ;; Corresponds to Core/StepName
 (s/def :core/commands (s/coll-of string?)) ;; Corresponds to Core/Commands
@@ -55,6 +58,17 @@
         :args (s/cat :build :core/build)
         :ret :core/step)
 
+(defn readpipeline [path]
+  (let [yaml (yaml/from-file path)
+        yaml-pipe (:steps yaml)
+        rekeyed (mapv #(set/rename-keys % {:name :core/step-name
+                                           :image :docker/image
+                                           :commands :core/commands}) yaml-pipe)
+        upfun (fn [x]
+                (let [imgvec (string/split x #":")]
+                  (zipmap [:docker/image-name :docker/image-tag] (conj imgvec "latest"))))]
+    (mapv #(update % :docker/image upfun) rekeyed)))
+
 (defn buildready [service build]
   (cond
     (not (all-steps-success build)) ;; Any step failed
@@ -62,11 +76,13 @@
 
     (not (all-steps-run build)) ;; Any steps need run
     (let [stepnext (nextstep build)
-          image (:docker/image-name (:docker/image stepnext))
+          image (str (:docker/image-name (:docker/image stepnext))
+                     ":"
+                     (:docker/image-tag (:docker/image stepnext)))
           cmd (:core/commands stepnext)
           vol (:docker/volume-name build)
           opts {:image image :cmd cmd :vol vol}
-          img ((.pull-image service) (:docker/image stepnext))
+          pull-img ((.pull-image service) (:docker/image stepnext))
           cid ((.create-container service) opts)
           res ((.start-container service) cid)]
       ;; (clojure.pprint/pprint res)

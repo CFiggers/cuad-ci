@@ -58,40 +58,53 @@
             (let [build ((.preparebuild runner) test-pipeline)
                   res ((.runbuild runner) empty-hooks build)]
               (test/is (= (res :core/build-state) :buildsucceeded))
-              (test/is (= true (core/all-steps-success res)))))
+              (test/is (= true (core/all-steps-success res))))))
 
-          (test/testing "should run a build (failure)"
-            (prn "- Cuad CI should run a build (failure)")
-            (let [build ((.preparebuild runner) bad-pipeline)
-                  res ((.runbuild runner) empty-hooks build)]
-              (test/is (= (res :core/build-state) :buildfailed))))
+        (test/testing "should run a build (failure)"
+          (prn "- Cuad CI should run a build (failure)")
+          (let [build ((.preparebuild runner) bad-pipeline)
+                res ((.runbuild runner) empty-hooks build)]
+            (test/is (= (res :core/build-state) :buildfailed))))
 
-          (test/testing "should share workspace between steps"
-            (prn "- Cuad CI should share workspace between steps")
-            (let [build ((.preparebuild runner) test-workspace-pipeline)
-                  res ((.runbuild runner) empty-hooks build)]
-              (test/is (= (res :core/build-state) :buildsucceeded))
-              (test/is (= true (core/all-steps-success res)))))
+        (test/testing "should share workspace between steps"
+          (prn "- Cuad CI should share workspace between steps")
+          (let [build ((.preparebuild runner) test-workspace-pipeline)
+                res ((.runbuild runner) empty-hooks build)]
+            (test/is (= (res :core/build-state) :buildsucceeded))
+            (test/is (= true (core/all-steps-success res)))))
 
-          (test/testing "should collect logs"
-            (prn "- Cuad CI should collect logs")
-            (let [mem (atom #{"hello" "world" "Linux"})
-                  build ((.preparebuild runner) test-log-pipeline)
-                  onlog (fn [log] ;; {"Long step" ("hello" "world")}
-                          (let [remaining @mem
-                                logged (set (mapcat #(string/split % #" ") (:logging/output log)))
-                                found-words (set/intersection remaining logged)]
-                            (swap! mem set/difference found-words)))
-                  test-hooks (runner/->hooks (partial onlog))
-                  res ((.runbuild runner) test-hooks build)]
-              (test/is (= (res :core/build-state) :buildsucceeded))
-              (test/is (= true (core/all-steps-success res)))
-              (test/is (= #{} @mem))))
+        (test/testing "should collect logs"
+          (prn "- Cuad CI should collect logs")
+          (let [mem (atom #{"hello" "world" "Linux"})
+                build ((.preparebuild runner) test-log-pipeline)
+                onlog (fn [log] ;; {"Long step" ("hello" "world")}
+                        (let [remaining @mem
+                              logged (set (mapcat #(string/split % #" ") (:logging/output log)))
+                              found-words (set/intersection remaining logged)]
+                          (swap! mem set/difference found-words)))
+                test-hooks (runner/->hooks (partial onlog))
+                res ((.runbuild runner) test-hooks build)]
+            (test/is (= (res :core/build-state) :buildsucceeded))
+            (test/is (= true (core/all-steps-success res)))
+            (test/is (= #{} @mem))))
 
-          (test/testing "should pull images"
-            (prn "- Cuad CI should pull images")
-            (shell/sh "bash" "-c" "docker rmi -f busybox")
-            (let [build ((.preparebuild runner) test-pull-pipeline)
-                  res ((.runbuild runner) empty-hooks build)]
-              (test/is (= (res :core/build-state) :buildsucceeded))
-              (test/is (= true (core/all-steps-success res)))))))))
+        (test/testing "should pull images"
+          (prn "- Cuad CI should pull images")
+          (shell/sh "bash" "-c" "docker rmi -f busybox")
+          (let [build ((.preparebuild runner) test-pull-pipeline)
+                res ((.runbuild runner) empty-hooks build)]
+            (test/is (= (res :core/build-state) :buildsucceeded))
+            (test/is (= true (core/all-steps-success res))))))))
+
+(test/deftest basic-tests-2
+  (prn "Test run: basic-tests")
+  (let [docker (docker/create-service)
+        runner (runner/create-service docker)
+        empty-hooks (runner/empty-hooks)]
+    (test/testing "should decode pipelines"
+      (prn "- Cuad CI should decode yaml pipelines")
+      (let [pipeline (core/readpipeline "test/cuad_ci/pipeline.sample.yml")
+            build ((.preparebuild runner) pipeline)
+            res ((.runbuild runner) empty-hooks build)]
+        (test/is (= (res :core/build-state) :buildsucceeded))
+        (test/is (= true (core/all-steps-success res)))))))

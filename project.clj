@@ -7,7 +7,8 @@
                  [org.clojure/data.json "2.4.0"]
                  [org.clojure/spec.alpha "0.2.194"]
                  [http-kit "2.5.3"]
-                 [unixsocket-http "1.0.8"]]
+                 [unixsocket-http "1.0.8"]
+                 [io.forward/yaml "1.0.10"]]
   :main ^:skip-aot cuad-ci.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
