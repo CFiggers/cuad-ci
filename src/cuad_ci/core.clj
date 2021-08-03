@@ -14,6 +14,8 @@
                                 :core/commands
                                 :docker/image])) ;; Corresponds to Core/Step
 
+(s/def :core/build-number int?) ;; Corresponds to Core/BuildNumber
+
 (s/def :core/pipeline (s/and not-empty
                              (s/coll-of #(s/valid? :core/step %)))) ;; Corresponds to Core/Pipeline
 (s/def :core/build-result #{:buildsucceeded
